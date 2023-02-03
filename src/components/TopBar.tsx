@@ -16,8 +16,15 @@ export default function TopBar(){
 
             {/* mobile section */}
             <div className="flex md:hidden h-24 border-b-2 border-[#FF6600] justify-between items-center p-2">
-                <div className="ml-8 shadow-middle shadow-[#FF6600] rounded-full">
-                    <Image src={Logo} alt="VR_Logo" width={60} height={60}  onClick={() => Router.push('/')} />
+                <div 
+                    className="flex flex-row items-center gap-3"
+                    onClick={() => Router.push('/')}    
+                >
+                    <div className="ml-8 shadow-middle shadow-[#FF6600] rounded-full">
+                        <Image src={Logo} alt="VR_Logo" width={60} height={60} />
+                    </div>
+
+                    <p className="text-white">Início</p>
                 </div>
 
                 <div className="text-white">
@@ -92,7 +99,7 @@ export default function TopBar(){
                     
                 </div>
 
-                <div className="hover:shadow-[0_0_25px] hover:shadow-[#FF6600] shadow-middle shadow-[#FF6600] rounded-full transition-all cursor-pointer">
+                <div className="hover:shadow-[0_0_25px] hover:shadow-[#FF6600] hover:animate-none animate-pulse shadow-middle shadow-[#FF6600] rounded-full transition-all cursor-pointer">
                     <Image src={Logo} alt="VR_Logo" width={80} height={80} onClick={() => Router.push('/')} />
                 </div>
 
