@@ -56,7 +56,7 @@ export default function TopBar(){
                             <MenuItem>
                                 <div 
                                     className="flex flex-row items-center mt-4 mr-5 gap-3"
-                                    onClick={() => Router.push('/')}
+                                    onClick={() => Router.push('/projetos')}
                                 >
                                     <Cards className="ml-1 w-8 h-8"/>
                                     <p>PROJETOS</p>
@@ -66,7 +66,7 @@ export default function TopBar(){
                             <MenuItem>
                                 <div 
                                     className="flex flex-row items-center mt-4 mr-5 gap-3"
-                                    onClick={() => Router.push('/')}
+                                    onClick={() => Router.push('/contatos')}
                                 >
                                     <PaperPlaneRight className="ml-1 w-8 h-8"/>
                                     <p>CONTATOS</p>
@@ -107,14 +107,14 @@ export default function TopBar(){
 
                     <p 
                         className="hover:text-white transition-all text-2xl font-light cursor-pointer"
-                        onClick={() => Router.push('/')}
+                        onClick={() => Router.push('/projetos')}
                     >
                         PROJETOS
                     </p>
                     
                     <p 
                         className="hover:text-white transition-all text-2xl font-light cursor-pointer"
-                        onClick={() => Router.push('/')}
+                        onClick={() => Router.push('/contatos')}
                     >
                         CONTATOS
                     </p>
