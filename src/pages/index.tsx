@@ -7,7 +7,7 @@ import { SobreMim } from "@/components/SobreMim";
 export default function Home() {
   return (
     <div className="flex flex-col items-center">
-        <div className="flex w-full h-auto py-36">
+        <div className="flex w-full h-screen">
             <Apresentacao/>
         </div>
 
