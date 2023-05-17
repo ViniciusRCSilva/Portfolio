@@ -12,10 +12,10 @@ import git from '../../public/git 1.svg'
 
 export function Habilidades(){
     return(
-        <div className="hidden md:flex flex-col w-[80%] items-center justify-center gap-6">
-                <p className="text-6xl text-[#FF6600]">HABILIDADES</p>
+        <div className="flex flex-col w-[80%] items-center justify-center gap-6">
+                <p className="text-4xl lg:text-6xl text-[#FF6600]">HABILIDADES</p>
              
-                <div className="w-[50%] grid grid-cols-3 gap-4">
+                <div className="w-full lg:w-[50%] grid grid-cols-3 gap-4">
                     <Habilidade name="ReactJS" image={react} />
                     <Habilidade name="NextJS" image={next} />
                     <Habilidade name="TypeScript" image={ts} />

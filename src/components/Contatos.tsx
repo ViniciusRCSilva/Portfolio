@@ -3,12 +3,12 @@ import { Envelope, GithubLogo, LinkedinLogo, MapPin, Phone } from "phosphor-reac
 
 export function Contatos(){
     return(
-        <div className="hidden md:flex flex-col w-[90%] items-center justify-center gap-6">
-            <p className="text-6xl text-[#FF6600]">CONTATOS</p>
+        <div className="flex flex-col w-[90%] items-center justify-center gap-6">
+            <p className="text-4xl lg:text-6xl text-[#FF6600]">CONTATOS</p>
 
-            <div className="flex flex-row w-[60%] justify-between items-center text-2xl">
+            <div className="flex flex-col lg:flex-row w-full lg:w-[60%] justify-between items-center text-xl lg:text-2xl gap-3 lg:gap-0">
 
-                <div className="flex flex-col justify-start gap-3">
+                <div className="flex flex-col w-full justify-center items-center lg:justify-start lg:items-start gap-3">
                     <div className="flex flex-row items-center gap-3 pb-1 link link-underline link-underline-white cursor-pointer">
                         <Phone className="w-10 h-10" />
                         <p>(81) 9 9999-8987</p>

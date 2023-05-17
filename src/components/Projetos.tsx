@@ -3,8 +3,8 @@ import { ProjetoPrincipal } from "./ProjetoPrincipal";
 
 export function Projetos(){
     return(
-        <div className="hidden md:flex flex-col w-[80%] items-center justify-center gap-5">
-            <p className="text-6xl p-6 bg-white text-[#FF6600] rounded-full shadow-lg">PROJETOS</p>
+        <div className="flex flex-col w-[80%] items-center justify-center gap-5">
+            <p className="text-4xl lg:text-6xl p-6 bg-white text-[#FF6600] rounded-full shadow-lg">PROJETOS</p>
 
             <div className="flex flex-col w-full items-center justify-center gap-5">
                 <ProjetoPrincipal link="https://bliss-bem-estar.vercel.app" title="Bliss" img="https://i.imgur.com/UiYcqkY.png" />
