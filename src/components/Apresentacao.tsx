@@ -4,6 +4,7 @@ import Github from '../../public/Github.svg'
 
 import Typewriter from 'typewriter-effect';
 import Image from "next/image";
+import { Parallax } from "./ParallaxBox";
 
 export function Apresentacao(){
     return(
@@ -33,9 +34,9 @@ export function Apresentacao(){
                     </div>
                 </div>
 
-                <div className="hidden lg:flex border-4 border-transparent hover:border-[#FF6600] rounded-full p-6 hover:scale-105 transition-all">
-                    <Image src="https://avatars.githubusercontent.com/u/71902143?v=4" alt="portrait" width={350} height={350} className="rounded-full" />
-                </div>
+                <Parallax>
+                    <Image src="https://avatars.githubusercontent.com/u/71902143?v=4" alt="portrait" width={350} height={350} className="hidden lg:flex border-4 border-transparent hover:border-[#FF6600] p-6 transition-all rounded-full" />
+                </Parallax>
             </div>
         </div>
     )
