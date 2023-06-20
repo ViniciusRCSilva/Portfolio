@@ -21,7 +21,7 @@ export function Apresentacao(){
                         <div className="font-thin text-[45px] text-center lg:text-left">
                             <Typewriter
                                 onInit={(typewriter) => {
-                                typewriter.typeString('Web Developer')
+                                typewriter.typeString('Full-Stack Developer')
                                     .start();
                                 }}
                             />
