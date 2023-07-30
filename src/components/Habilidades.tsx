@@ -10,22 +10,30 @@ import js from '../../public/javascript 1.svg'
 import figma from '../../public/figma 1.svg'
 import git from '../../public/git 1.svg'
 
-export function Habilidades(){
+interface HabilidadesProps{
+    idioma?: string
+}
+
+export function Habilidades(props: HabilidadesProps){
     return(
         <div className="flex flex-col w-[80%] items-center justify-center gap-6">
+            {props.idioma == 'brasil' ? (
                 <p className="text-4xl lg:text-6xl text-[#FF6600]">HABILIDADES</p>
-             
-                <div className="w-full lg:w-[50%] grid grid-cols-3 gap-4">
-                    <Habilidade name="ReactJS" image={react} />
-                    <Habilidade name="NextJS" image={next} />
-                    <Habilidade name="TypeScript" image={ts} />
-                    <Habilidade name="JavaScript" image={js} />
-                    <Habilidade name="TailwindCSS" image={twcss} />
-                    <Habilidade name="HTML5" image={html} />
-                    <Habilidade name="CSS3" image={css} />
-                    <Habilidade name="Figma" image={figma} />
-                    <Habilidade name="Git" image={git} />
-                </div>
+            ) : (
+                <p className="text-4xl lg:text-6xl text-[#FF6600]">HABILITIES</p>
+            )}
+            
+            <div className="w-full lg:w-[50%] grid grid-cols-3 gap-4">
+                <Habilidade name="ReactJS" image={react} />
+                <Habilidade name="NextJS" image={next} />
+                <Habilidade name="TypeScript" image={ts} />
+                <Habilidade name="JavaScript" image={js} />
+                <Habilidade name="TailwindCSS" image={twcss} />
+                <Habilidade name="HTML5" image={html} />
+                <Habilidade name="CSS3" image={css} />
+                <Habilidade name="Figma" image={figma} />
+                <Habilidade name="Git" image={git} />
             </div>
+        </div>
     )
 }

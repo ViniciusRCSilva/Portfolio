@@ -1,10 +1,18 @@
 import Link from "next/link";
 import { Envelope, GithubLogo, LinkedinLogo, MapPin, Phone } from "phosphor-react";
 
-export function Contatos(){
+interface ContatosProps{
+    idioma?: string
+}
+
+export function Contatos(props: ContatosProps){
     return(
         <div className="flex flex-col w-[90%] items-center justify-center gap-6">
-            <p className="text-4xl lg:text-6xl text-[#FF6600]">CONTATOS</p>
+            {props.idioma == 'brasil' ? (
+                <p className="text-4xl lg:text-6xl text-[#FF6600]">CONTATOS</p>
+            ) : (
+                <p className="text-4xl lg:text-6xl text-[#FF6600]">CONTACTS</p>
+            )}
 
             <div className="flex flex-col lg:flex-row w-full lg:w-[60%] justify-between items-center text-xl lg:text-2xl gap-3 lg:gap-0">
 
