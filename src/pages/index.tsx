@@ -28,7 +28,7 @@ export default function Home() {
             </div>
 
             <div className="flex w-full h-screen">
-                <Apresentacao/>
+                <Apresentacao idioma={idioma}/>
             </div>
 
             <div className="flex w-full h-auto bg-gradient-to-b from-[#e45b00] to-[#FF6600] justify-center py-36">

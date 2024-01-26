@@ -6,7 +6,11 @@ import Typewriter from 'typewriter-effect';
 import Image from "next/image";
 import { Parallax } from "./ParallaxBox";
 
-export function Apresentacao(){
+interface ApresentacaoProps{
+    idioma?: string
+}
+
+export function Apresentacao(props: ApresentacaoProps){
     return(
         <div className="flex w-full justify-center">
             <div className="flex flex-col lg:flex-row w-[85%] justify-center lg:justify-between items-center gap-4 lg:gap-0">
@@ -18,13 +22,22 @@ export function Apresentacao(){
                     <div>                        
                         <p className="text-[#FF6600] text-6xl text-center lg:text-left">VINICIUS RODRIGUES</p>
 
-                        <div className="font-thin text-[45px] text-center lg:text-left">
+                        <div className={`${props.idioma == "brasil" ? "flex" : "hidden"} font-thin text-[45px] text-center lg:text-left transition-opacity`}>
                             <Typewriter
                                 onInit={(typewriter) => {
-                                typewriter.typeString('Full-Stack Developer')
+                                typewriter.typeString('Desenvolvedor Web')
                                     .start();
                                 }}
                             />
+                        </div>
+                        
+                        <div className={`${props.idioma == "eua" ? "flex" : "hidden"} font-thin text-[45px] text-center lg:text-left`}>
+                            <Typewriter
+                                onInit={(typewriter) => {
+                                typewriter.typeString('Web Developer')
+                                    .start();
+                                }}
+                            /> 
                         </div>
                     </div>
 
