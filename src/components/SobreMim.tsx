@@ -11,8 +11,14 @@ export function SobreMim(props: SobreMimProps){
     const date = new Date
     const [idade, setIdade] = useState<number>()
 
-    function handleIdade(){
-        let idade = date.getFullYear() - 2002
+    function handleIdade(){        
+        let idade = 0
+
+        if(date.getMonth() >= 2 && date.getDate() >= 23) {
+            idade = date.getFullYear() - 2002
+        } else {
+            idade = (date.getFullYear() - 2002) - 1
+        }
 
         setIdade(idade)
     }
@@ -37,11 +43,26 @@ export function SobreMim(props: SobreMimProps){
                         </div>
 
                         <p className="text-lg font-normal lg:text-2xl">
-                            Eu tenho {idade} anos e atualmente estou cursando Ciência da Computação.
-                            <br/>
-                            Meus estudos estão voltados em obter conhecimentos no
-                            desenvolvimento de aplicações nos frameworks como NextJS e ReactJS. 
-                            Antes começar qualquer aplicação, eu gosto sempre de criar protótipos no Figma.
+                            Eu tenho {idade} anos e sou formado em Ciência da Computação.
+                        </p>
+
+                        <p className="text-lg font-normal lg:text-2xl">
+                            Destaco minha proficiência em desenvolvimento web, 
+                            com habilidades avançadas em HTML, CSS, JavaScript, TypeScript e frameworks como ReactJS e NextJS. 
+                            Ao longo da graduação, participei ativamente de projetos e estágio como professor de desenvolvimento web, 
+                            combinando sólida base teórica com experiência prática. 
+                        </p>
+
+                        <p className="text-lg font-normal lg:text-2xl">
+                            Além do desenvolvimento web, possuo conhecimentos 
+                            em algoritmos, estruturas de dados e banco de dados. Destaco competências interpessoais, sendo colaborativo, 
+                            comunicativo e aberto a feedback construtivo. 
+                        </p>
+
+                        <p className="text-lg font-normal lg:text-2xl">
+                            Procuro oportunidades que explorem minha paixão pelo desenvolvimento 
+                            web e permitam a exploração de outras áreas da computação. Estou pronto para contribuir em projetos desafiadores e 
+                            crescer profissionalmente em um ambiente dinâmico e inovador.
                         </p>
                     </div>
                 </>
@@ -59,10 +80,16 @@ export function SobreMim(props: SobreMimProps){
                         </div>
 
                         <p className="text-lg font-normal lg:text-2xl">
-                            I am {idade} years old and currently pursuing Computer Science. 
+                            Im {idade} years old and have a degree in Computer Science.
                             <br/>
-                            My studies are focused on acquiring knowledge in application development using frameworks like NextJS 
-                            and ReactJS. Before starting any project, I always like to create prototypes in Figma.
+                            I highlight my proficiency in web development,
+                            with advanced skills in HTML, CSS, JavaScript, TypeScript and frameworks such as ReactJS and NextJS.
+                            Throughout my degree, I actively participated in projects and internships as a web development teacher,
+                            combining a solid theoretical foundation with practical experience. In addition to web development, I have knowledge
+                            in algorithms, data structures and databases. I highlight interpersonal skills, being collaborative,
+                            communicative and open to constructive feedback. I look for opportunities that explore my passion for development
+                            web and allow the exploration of other areas of computing. I am ready to contribute to challenging projects and
+                            grow professionally in a dynamic and innovative environment.
                         </p>
                     </div>
                 </>
