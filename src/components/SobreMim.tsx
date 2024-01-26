@@ -80,14 +80,23 @@ export function SobreMim(props: SobreMimProps){
                         </div>
 
                         <p className="text-lg font-normal lg:text-2xl">
-                            Im {idade} years old and have a degree in Computer Science.
-                            <br/>
+                        Im {idade} years old and have a degree in Computer Science.
+                        </p>
+
+                        <p className="text-lg font-normal lg:text-2xl">
                             I highlight my proficiency in web development,
                             with advanced skills in HTML, CSS, JavaScript, TypeScript and frameworks such as ReactJS and NextJS.
+                        </p>
+
+                        <p className="text-lg font-normal lg:text-2xl">
                             Throughout my degree, I actively participated in projects and internships as a web development teacher,
                             combining a solid theoretical foundation with practical experience. In addition to web development, I have knowledge
                             in algorithms, data structures and databases. I highlight interpersonal skills, being collaborative,
-                            communicative and open to constructive feedback. I look for opportunities that explore my passion for development
+                            communicative and open to constructive feedback. 
+                        </p>
+
+                        <p className="text-lg font-normal lg:text-2xl">
+                            I look for opportunities that explore my passion for development
                             web and allow the exploration of other areas of computing. I am ready to contribute to challenging projects and
                             grow professionally in a dynamic and innovative environment.
                         </p>
