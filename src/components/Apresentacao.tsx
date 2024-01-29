@@ -22,7 +22,7 @@ export function Apresentacao(props: ApresentacaoProps){
                     <div>                        
                         <p className="text-[#FF6600] text-6xl text-center lg:text-left">VINICIUS RODRIGUES</p>
 
-                        <div className={`${props.idioma == "brasil" ? "flex" : "hidden"} font-thin text-[45px] text-center lg:text-left transition-opacity`}>
+                        <div className={`${props.idioma == "brasil" ? "block" : "hidden"} font-thin text-[45px] text-center lg:text-left transition-opacity`}>
                             <Typewriter
                                 onInit={(typewriter) => {
                                 typewriter.typeString('Desenvolvedor Web')
@@ -31,7 +31,7 @@ export function Apresentacao(props: ApresentacaoProps){
                             />
                         </div>
                         
-                        <div className={`${props.idioma == "eua" ? "flex" : "hidden"} font-thin text-[45px] text-center lg:text-left`}>
+                        <div className={`${props.idioma == "eua" ? "block" : "hidden"} font-thin text-[45px] text-center lg:text-left`}>
                             <Typewriter
                                 onInit={(typewriter) => {
                                 typewriter.typeString('Web Developer')
