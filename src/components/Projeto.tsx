@@ -27,7 +27,7 @@ export function Projeto(props: ProjetoProps){
                                 <p className="flex pr-6">{props.descEn}</p>
                             )}
 
-                            <div className="w-full bg-slate-800 text- h-1 rounded-full" />
+                            <div className="w-[90%] self-center lg:self-start bg-slate-800 h-1 rounded-full" />
 
                             <div className="flex flex-col w-full gap-4 pb-2">
                                 {props.idioma == 'brasil' ? (
@@ -45,7 +45,7 @@ export function Projeto(props: ProjetoProps){
 
                         <h1 className="flex lg:hidden text-2xl font-medium">{props.title}</h1>
 
-                        <div className="lg:hidden flex w-[80%] bg-slate-800 text- h-1 rounded-full" />
+                        <div className="lg:hidden flex w-[90%] self-center bg-slate-800 h-1 rounded-full" />
 
                         <div className="lg:hidden flex flex-col w-full lg:justify-end justify-center items-center gap-4 pb-2">
                             {props.idioma == 'brasil' ? (
@@ -71,7 +71,7 @@ export function Projeto(props: ProjetoProps){
                                 <p className="hidden lg:flex pl-6">{props.descEn}</p>
                             )}
 
-                            <div className="lg:w-full w-[80%] self-center bg-slate-800 h-1 rounded-full" />
+                            <div className="w-[90%] self-center lg:self-end bg-slate-800 h-1 rounded-full" />
 
                             <div className="flex flex-col w-full lg:justify-end gap-4 pb-2">
                                 {props.idioma == 'brasil' ? (
