@@ -11,16 +11,18 @@ export function SobreMim(props: SobreMimProps){
     const date = new Date
     const [idade, setIdade] = useState<number>()
 
-    function handleIdade(){        
-        let idade = 0
+    function handleIdade() {
+        let dia = date.getDate();
+        let mes = date.getMonth() + 1;
+        let ano = date.getFullYear();
+        let idade = ano - 2002 - 1;
+    
 
-        if(date.getMonth() >= 2 && date.getDate() >= 23) {
-            idade = date.getFullYear() - 2002
-        } else {
-            idade = (date.getFullYear() - 2002) - 1
+        if (mes > 3 || (mes === 3 && dia >= 23)) {
+            idade += 1;
         }
-
-        setIdade(idade)
+    
+        setIdade(idade);
     }
 
     useEffect(() => {
