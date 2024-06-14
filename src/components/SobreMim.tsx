@@ -3,11 +3,11 @@ import Image from "next/image";
 import handWave from '../../public/waving-hand.gif'
 import { useEffect, useState } from "react";
 
-interface SobreMimProps{
+interface SobreMimProps {
     idioma?: string
 }
 
-export function SobreMim(props: SobreMimProps){
+export function SobreMim(props: SobreMimProps) {
     const date = new Date
     const [idade, setIdade] = useState<number>()
 
@@ -16,12 +16,12 @@ export function SobreMim(props: SobreMimProps){
         let mes = date.getMonth() + 1;
         let ano = date.getFullYear();
         let idade = ano - 2002 - 1;
-    
+
 
         if (mes > 3 || (mes === 3 && dia >= 23)) {
             idade += 1;
         }
-    
+
         setIdade(idade);
     }
 
@@ -29,15 +29,15 @@ export function SobreMim(props: SobreMimProps){
         handleIdade()
     }, [])
 
-    return(
+    return (
         <div className="flex flex-col w-[80%] items-center justify-center gap-5">
             {props.idioma == 'brasil' ? (
-                <>                
+                <>
                     <p className="text-4xl lg:text-6xl p-6 bg-white text-[#FF6600] rounded-full shadow-lg">SOBRE MIM</p>
 
                     <div className="flex flex-col text-4xl font-thin text-center gap-5">
                         <div className="flex items-center justify-center gap-3">
-                            <p className="text-3xl lg:text-5xl font-light">Olá!</p> 
+                            <p className="text-3xl lg:text-5xl font-light">Olá!</p>
                             <div className="flex w-12 h-12 lg:w-16 lg:h-16 justify-center items-center rounded-full bg-white p-2">
                                 <Image src={handWave} alt="waving-hand" width={50} height={50} className="hidden lg:flex" />
                                 <Image src={handWave} alt="waving-hand" width={30} height={30} className="flex lg:hidden" />
@@ -49,32 +49,26 @@ export function SobreMim(props: SobreMimProps){
                         </p>
 
                         <p className="text-lg font-normal lg:text-2xl">
-                            Destaco minha proficiência em desenvolvimento web, 
-                            com habilidades avançadas em HTML, CSS, JavaScript, TypeScript e frameworks como ReactJS e NextJS. 
-                            Ao longo da graduação, participei ativamente de projetos e estágio como professor de desenvolvimento web, 
-                            combinando sólida base teórica com experiência prática. 
+                            Destaco minha proficiência em desenvolvimento web,
+                            com habilidades avançadas em HTML, CSS, JavaScript, TypeScript e frameworks como ReactJS e NextJS.
+                            Ao longo da graduação, participei ativamente de projetos e estágio como professor de desenvolvimento web,
+                            combinando sólida base teórica com experiência prática.
                         </p>
 
                         <p className="text-lg font-normal lg:text-2xl">
-                            Além do desenvolvimento web, possuo conhecimentos 
-                            em algoritmos, estruturas de dados e banco de dados. Destaco competências interpessoais, sendo colaborativo, 
-                            comunicativo e aberto a feedback construtivo. 
-                        </p>
-
-                        <p className="text-lg font-normal lg:text-2xl">
-                            Procuro oportunidades que explorem minha paixão pelo desenvolvimento 
-                            web e permitam a exploração de outras áreas da computação. Estou pronto para contribuir em projetos desafiadores e 
-                            crescer profissionalmente em um ambiente dinâmico e inovador.
+                            Além do desenvolvimento web, possuo conhecimentos
+                            em algoritmos, estruturas de dados e banco de dados. Destaco competências interpessoais, sendo colaborativo,
+                            comunicativo e aberto a feedback construtivo.
                         </p>
                     </div>
                 </>
             ) : (
-                <>                
+                <>
                     <p className="text-4xl lg:text-6xl p-6 bg-white text-[#FF6600] rounded-full shadow-lg">ABOUT ME</p>
 
                     <div className="flex flex-col text-4xl font-thin text-center gap-5">
                         <div className="flex items-center justify-center gap-3">
-                            <p className="text-3xl lg:text-5xl font-light">Hello!</p> 
+                            <p className="text-3xl lg:text-5xl font-light">Hello!</p>
                             <div className="flex w-12 h-12 lg:w-16 lg:h-16 justify-center items-center rounded-full bg-white p-2">
                                 <Image src={handWave} alt="waving-hand" width={50} height={50} className="hidden lg:flex" />
                                 <Image src={handWave} alt="waving-hand" width={30} height={30} className="flex lg:hidden" />
@@ -82,7 +76,7 @@ export function SobreMim(props: SobreMimProps){
                         </div>
 
                         <p className="text-lg font-normal lg:text-2xl">
-                        Im {idade} years old and have a degree in Computer Science.
+                            Im {idade} years old and have a degree in Computer Science.
                         </p>
 
                         <p className="text-lg font-normal lg:text-2xl">
@@ -94,13 +88,7 @@ export function SobreMim(props: SobreMimProps){
                             Throughout my degree, I actively participated in projects and internships as a web development teacher,
                             combining a solid theoretical foundation with practical experience. In addition to web development, I have knowledge
                             in algorithms, data structures and databases. I highlight interpersonal skills, being collaborative,
-                            communicative and open to constructive feedback. 
-                        </p>
-
-                        <p className="text-lg font-normal lg:text-2xl">
-                            I look for opportunities that explore my passion for development
-                            web and allow the exploration of other areas of computing. I am ready to contribute to challenging projects and
-                            grow professionally in a dynamic and innovative environment.
+                            communicative and open to constructive feedback.
                         </p>
                     </div>
                 </>
