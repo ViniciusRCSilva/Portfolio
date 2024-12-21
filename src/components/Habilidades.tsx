@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Habilidade from "./Habilidade";
 
 import react from '../../public/react 1.svg'
@@ -18,28 +19,72 @@ interface HabilidadesProps {
 }
 
 export function Habilidades(props: HabilidadesProps) {
-    return (
-        <div className="flex flex-col w-[80%] items-center justify-center gap-6">
-            {props.idioma == 'brasil' ? (
-                <p className="text-4xl lg:text-6xl text-[#FF6600]">HABILIDADES</p>
-            ) : (
-                <p className="text-4xl lg:text-6xl text-[#FF6600]">HABILITIES</p>
-            )}
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
 
-            <div className="w-full lg:w-[50vw] grid grid-cols-3 gap-4">
-                <Habilidade name="Python" image={python} />
-                <Habilidade name="PowerBI" image={powerbi} />
-                <Habilidade name="SQL" image={sql} />
-                <Habilidade name="ReactJS" image={react} />
-                <Habilidade name="NextJS" image={next} />
-                <Habilidade name="TypeScript" image={ts} />
-                <Habilidade name="JavaScript" image={js} />
-                <Habilidade name="TailwindCSS" image={twcss} />
-                <Habilidade name="HTML5" image={html} />
-                <Habilidade name="CSS3" image={css} />
-                <Habilidade name="Figma" image={figma} />
-                <Habilidade name="Git" image={git} />
-            </div>
-        </div>
+    const skills = [
+        { name: "Python", image: python },
+        { name: "PowerBI", image: powerbi },
+        { name: "SQL", image: sql },
+        { name: "React", image: react },
+        { name: "Next.js", image: next },
+        { name: "TypeScript", image: ts },
+        { name: "Tailwind", image: twcss },
+        { name: "HTML", image: html },
+        { name: "CSS", image: css },
+        { name: "JavaScript", image: js },
+        { name: "Figma", image: figma },
+        { name: "Git", image: git },
+    ];
+
+    return (
+        <motion.div
+            className="flex flex-col w-[80%] items-center justify-center gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+        >
+            <motion.div
+                initial={{ scale: 0.5, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="relative group"
+            >
+                <h2 className="relative text-4xl lg:text-6xl p-6 bg-black text-white rounded-full font-bold">
+                    {props.idioma == 'brasil' ? 'HABILIDADES' : 'SKILLS'}
+                </h2>
+            </motion.div>
+
+            <motion.div
+                className="w-full max-w-4xl grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+                variants={containerVariants}
+            >
+                {skills.map((skill, index) => (
+                    <motion.div
+                        key={skill.name}
+                        variants={{
+                            hidden: { opacity: 0, scale: 0.8 },
+                            visible: {
+                                opacity: 1,
+                                scale: 1,
+                                transition: {
+                                    delay: index * 0.1
+                                }
+                            }
+                        }}
+                    >
+                        <Habilidade name={skill.name} image={skill.image} />
+                    </motion.div>
+                ))}
+            </motion.div>
+        </motion.div>
     )
 }
