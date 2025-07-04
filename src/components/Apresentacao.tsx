@@ -12,22 +12,28 @@ interface ApresentacaoProps {
 
 export function Apresentacao(props: ApresentacaoProps) {
     return (
-        <div className="flex w-full min-h-screen justify-center items-center py-20">
-            <div className="flex flex-col lg:flex-row w-[85%] justify-center lg:justify-between items-center gap-8 lg:gap-12">
+        <motion.section
+            className="flex w-full min-h-screen justify-center items-center py-20"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+        >
+            <div className="flex flex-col lg:flex-row w-[85%] mx-auto px-4 sm:px-6 lg:px-8 justify-center lg:justify-between items-center gap-8 lg:gap-16">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
                     className="flex lg:hidden"
                 >
                     <div className="relative group">
-                        <div className="absolute -inset-0.5 bg-gradient-to-r from-[#FF6600] to-[#e45b00] rounded-full blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                        <div className="absolute -inset-1 bg-gradient-to-r from-[#8c00ff] to-[#6700e4] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
+                        <div className="absolute inset-0.5 bg-black rounded-full z-0"></div>
                         <Image
                             src="https://avatars.githubusercontent.com/u/71902143?v=4"
                             alt="portrait"
                             width={200}
                             height={200}
-                            className="relative rounded-full"
+                            className="relative rounded-full transform transition-transform duration-500 group-hover:scale-105 z-10"
                         />
                     </div>
                 </motion.div>
@@ -35,46 +41,87 @@ export function Apresentacao(props: ApresentacaoProps) {
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
                     className="flex flex-col gap-8"
                 >
-                    <div className="flex flex-col gap-4">
-                        <h1 className="text-[#FF6600] text-4xl font-bold text-center lg:text-6xl lg:text-left bg-clip-text text-transparent bg-gradient-to-r from-[#FF6600] to-[#e45b00]">
+                    <div className="flex flex-col gap-6">
+                        <motion.h1
+                            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center lg:text-left bg-clip-text text-transparent bg-gradient-to-r from-[#8c00ff] to-[#6700e4] leading-tight"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                        >
                             VINICIUS RODRIGUES
-                        </h1>
+                        </motion.h1>
 
-                        <div className={`${props.idioma == "brasil" ? "block" : "hidden"} font-light text-3xl text-center lg:text-[45px] lg:text-left transition-all duration-300`}>
+                        <motion.div
+                            className={`${props.idioma == "brasil" ? "block" : "hidden"} font-light text-2xl sm:text-3xl lg:text-[45px] text-center lg:text-left transition-all duration-300 text-gray-200`}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.5, delay: 0.6 }}
+                        >
                             <Typewriter
                                 onInit={(typewriter) => {
-                                    typewriter.typeString('Desenvolvedor em evolução contínua')
+                                    typewriter
+                                        .typeString('Desenvolvedor Front-End')
+                                        .pauseFor(2000)
+                                        .deleteAll()
+                                        .typeString('Formado em Ciência da Computação')
+                                        .pauseFor(2000)
+                                        .deleteAll()
+                                        .typeString('UI/UX Designer')
+                                        .pauseFor(2000)
+                                        .deleteAll()
                                         .start();
                                 }}
+                                options={{
+                                    loop: true,
+                                    cursor: '|'
+                                }}
                             />
-                        </div>
+                        </motion.div>
 
-                        <div className={`${props.idioma == "eua" ? "block" : "hidden"} font-light text-3xl text-center lg:text-[45px] lg:text-left transition-all duration-300`}>
+                        <motion.div
+                            className={`${props.idioma == "eua" ? "block" : "hidden"} font-light text-2xl sm:text-3xl lg:text-[45px] text-center lg:text-left transition-all duration-300 text-gray-200`}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.5, delay: 0.6 }}
+                        >
                             <Typewriter
                                 onInit={(typewriter) => {
-                                    typewriter.typeString('Continuously evolving developer')
+                                    typewriter
+                                        .typeString('Front-End Developer')
+                                        .pauseFor(2000)
+                                        .deleteAll()
+                                        .typeString('Computer Science Graduate')
+                                        .pauseFor(2000)
+                                        .deleteAll()
+                                        .typeString('UI/UX Designer')
+                                        .pauseFor(2000)
+                                        .deleteAll()
                                         .start();
                                 }}
+                                options={{
+                                    loop: true,
+                                    cursor: '|'
+                                }}
                             />
-                        </div>
+                        </motion.div>
                     </div>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
+                        transition={{ duration: 0.5, delay: 0.8 }}
                         className="flex w-full justify-center lg:justify-start"
                     >
-                        <div className="flex w-32 items-center justify-between">
+                        <div className="flex w-56 items-center justify-between">
                             {props.idioma == 'brasil' ? (
-                                <IconesApresentacao name="CV" image={File} link="https://drive.google.com/file/d/1FjXoluQSPgm3XU9ZD9d0Ra-tfu451fIo/view?usp=sharing" />
+                                <IconesApresentacao name="Currículo" image={File} link="https://drive.google.com/file/d/1FjXoluQSPgm3XU9ZD9d0Ra-tfu451fIo/view?usp=sharing" />
                             ) : (
-                                <IconesApresentacao name="CV" image={File} link="https://drive.google.com/file/d/1_6JoQeFPa9Jqk5kYAilM_1JKSjHbic_d/view?usp=sharing" />
+                                <IconesApresentacao name="Resume" image={File} link="https://drive.google.com/file/d/1_6JoQeFPa9Jqk5kYAilM_1JKSjHbic_d/view?usp=sharing" />
                             )}
-                            <IconesApresentacao name="GH" image={Github} link="https://github.com/ViniciusRCSilva" />
+                            <IconesApresentacao name="GitHub" image={Github} link="https://github.com/ViniciusRCSilva" />
                         </div>
                     </motion.div>
                 </motion.div>
@@ -82,23 +129,24 @@ export function Apresentacao(props: ApresentacaoProps) {
                 <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
+                    transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
                     className="hidden lg:block"
                 >
                     <Parallax>
                         <div className="relative group">
-                            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#FF6600] to-[#e45b00] rounded-full blur opacity-0 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                            <div className="absolute -inset-1.5 bg-gradient-to-r from-[#8c00ff] to-[#6700e4] rounded-full blur opacity-40 group-hover:opacity-100 transition-all duration-500"></div>
+                            <div className="absolute inset-1 bg-black rounded-full z-0"></div>
                             <Image
                                 src="https://avatars.githubusercontent.com/u/71902143?v=4"
                                 alt="portrait"
                                 width={350}
                                 height={350}
-                                className="relative rounded-full"
+                                className="relative rounded-full transform transition-transform duration-500 group-hover:scale-105 z-10"
                             />
                         </div>
                     </Parallax>
                 </motion.div>
             </div>
-        </div>
+        </motion.section>
     )
 }
